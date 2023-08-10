@@ -32,7 +32,7 @@ in our RoverAPI package.
 
 ## The Task
 Your task is to create a ROS package that utilizes the topics published by the LeoRover and the ar_track_alavar package to have the
-robot follow an ARTag as it moves. The video below shows the desired behavior from the robot in the rear that is following the ARTag. 
+robot follow an ARTag as it moves. The video below shows the desired behavior from the robot in the rear it follows the ARTag on the robot in the front. 
 
 https://github.com/DiscoverCCRI/ROSTest/assets/102448637/b7992c15-5749-4851-ba19-3dd5d004828d
 
