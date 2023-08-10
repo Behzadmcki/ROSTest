@@ -28,7 +28,7 @@ ROS package to generate and track ARTags. Launch and configuration files to use 
 ## The Task
 Your task is to create a ROS package that utilizes the topics published by the LeoRover and the ar_track_alavar package to have the robot follow an ARTag as it moves. 
 
-![Video](https://drive.google.com/file/d/10pCkqGRu3OJQssxBhGJ9wco14s3YWYRL/view?usp=sharing)
+![Video](ARTag.mp4)
 
 
 
