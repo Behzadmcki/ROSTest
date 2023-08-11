@@ -38,7 +38,7 @@ robot follow an ARTag as it moves. The video below shows the desired behavior fr
 * The rover should maintain a following distance of about half a meter. It does not need to be exactly half a meter behind the ARTag at all times, but it should be close.
 * The rover should be able to follow the ARTag in multiple directions. If the ARTag veers to the left or right, the rover should turn accordingly. If the ARTag backs up, so should the rover.
 
-https://github.com/DiscoverCCRI/ROSTest/assets/102448637/b7992c15-5749-4851-ba19-3dd5d004828d
+https://github.com/DiscoverCCRI/ROSTest/assets/102448637/32544f80-58e4-4bb5-af17-de43826c3042
 
 ### Tools
 We have created a docker container image that has the capability of simulating both LeoRovers and ARTags for you to test your ideas. 
