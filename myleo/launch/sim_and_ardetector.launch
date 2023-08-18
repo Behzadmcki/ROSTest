@@ -1,0 +1,28 @@
+<launch>
+<arg name="x" default="2.0" />
+<arg name="y" default="2.0" />
+<arg name="z" default="1.0" />
+<arg name="R" default="0.0" />
+<arg name="P" default="0.0" />
+<arg name="Y" default="0.0" />
+
+<arg name="fixed" default="false" />
+<arg name="model_name" default="Marker0" />
+
+<arg name="world_name" default="world/simple.world"/>
+
+<include file="$(find leo_gazebo)/launch/leo_gazebo.launch">  
+<arg name="world_name" value="$(arg world_name)"/>
+</include>
+
+<include file="$(find rover_api)/launch/alvar.launch"/> 
+
+<node pkg="rqt_image_view" type="rqt_image_view" name="rqt_image_view" output="screen">
+    <remap from="/image" to="/camera/raw_data"/>
+</node>
+
+<!-- <node name="spawn_urdf1" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+        args="-model uri://Marker0" /> -->
+
+
+</launch>

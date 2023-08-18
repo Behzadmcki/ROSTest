@@ -1,0 +1,24 @@
+<sdf version="1.5">
+  <world name="default">
+
+    <!-- Martian Gravity-->
+    <gravity>0 0 -3.711</gravity>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+  <include>
+    <uri>model://Marker0</uri>
+    <pose>1 1 0 0 0 0<pose>
+  </include>
+
+  </world>
+</sdf>
