@@ -1,55 +1,32 @@
 # ROS Test
 This is a simple programming assignment designed to test your abilities to use ROS to solve a problem.
+## How to use this package 
+myleo is very simple package that is buit over python and rospy.
 
-## Background
+### prepration
+we assume that you are working on ubuntu or debian base systems 
+to install docker you should open terminal and copy and paste these lines 
+    "$curl -fsSL https://get.docker.com -o get-docker.sh"
+    "$sudo sh get-docker.sh"
+after installing the docker pull the docker image for the project:
+    "docker pull cjb873/sim_image:1.0"
+### Running 
+To run the image in a container, use the command docker run -p 9000:80 --name sim -it cjb873/sim_image:1.0, then open a web browser and go to localhost:9000. You should see the desktop for your container.
+### Simulation 
+To start the simulated environment, use the command:
+ "$roslaunch myleo sim_and_ardetector.launch"
+This command will bring up the gazebo simulation with a leo robot  and a rqt_view_image node to see the image of the RGB camera and it will also launch ARTag tracking node with its default configs
+### Run the tracker 
+For running the listener node to do the task you should run:
+    "rosrun myleo listener.py"
+as it runs it will print the linear x axis  and angular z axis velocity
+### examine the code 
+to see the resault you should insert a marker from prepared AR tags in gazebo and put it in front of FOV of the robot's camera( you can see the image of the camera live in rqt_view_image)
+as you put the marker in front of the camera the robot will move toward the marker until  ARTag tracking node could not recognise the marker and then the robot will stop
 
-### LeoRover
-![LeoRover](https://uploads-ssl.webflow.com/5aeedc7c6154a8acb0b29044/5e8e4d5a3fd0013dab1d3ded_leo%20rover%20showcase.jpg)
-
-At Discover, we use LeoRovers as our UGVs. Information about the LeoRover can be found [here](leorover.tech). The LeoRovers use a series 
-of ROS topics and nodes to control and access different components and sensors. The full rqt graph of the topics and nodes is below. 
-![rosgraph](https://github.com/DiscoverCCRI/ROSTest/assets/102448637/4673e269-7d84-4655-abdb-f97140bde28a)
 
 
-#### Important Topics
-The most important topics for the operation and sensing of the LeoRovers include:
-* /cmd_vel: This topic is used to move the rover by turning the wheels. The topic listens for geometry_msgs/Twist messages.
-* /wheel_odom_with_covariance: This topic contains a lot of useful information about the current position and velocity of the robot. Information is published in the format of a nav_msgs/Odometry message.
-* /joint_states: This topic also contains a lot of useful information about the current position and velocity of the robot. Information is published in the format of a sensor_msgs/JointState message.
-* /imu/data_raw: This topic contains useful information published from the robot's inertial measuring unit. Messages on this topic are
-published in the sensor_msgs/Imu format.
-* /camera/image_raw: This topic is used by the raspicam to publish image data. Images are published in the sensor_msgs/Image format.
 
-### ARTags
-
-![ARTag](http://wiki.ros.org/ar_track_alvar?action=AttachFile&do=get&target=artags.png)
-
-ARTags are markers that are used to support 3D alignment and tracking in augmented reality systems. More information about ARTags can be
-found [here](https://www.cs.cmu.edu/afs/cs/project/skinnerbots/Wiki/AprilTags/NRC-47419.pdf). 
-We use the [ar_track_alvar](http://wiki.ros.org/ar_track_alvar)
-ROS package to generate and track ARTags. Launch and configuration files used to integrate this package with the LeoRovers are included 
-in our RoverAPI package.
-
-## The Task
-Your task is to create a ROS package that utilizes the topics published by the LeoRover and the ar_track_alavar package to have the
-robot follow an ARTag as it moves. The video below shows the desired behavior from the robot in the rear it follows the ARTag on the robot in the front.
-
-### Notes
-* The rover should maintain a following distance of about half a meter. It does not need to be exactly half a meter behind the ARTag at all times, but it should be close.
-* The rover should be able to follow the ARTag in multiple directions. If the ARTag veers to the left or right, the rover should turn accordingly. If the ARTag backs up, so should the rover.
-
-https://github.com/DiscoverCCRI/ROSTest/assets/102448637/32544f80-58e4-4bb5-af17-de43826c3042
-
-### Tools
-We have created a docker container image that has the capability of simulating both LeoRovers and ARTags for you to test your ideas. 
-Information about the container image and usage can be found [here](https://hub.docker.com/r/cjb873/sim_image).
-
-### Submission
-Please fork this repository and keep all of your work within the forked repository. When you are ready to submit, email us a GitHub link 
-to the forked repository. Please write all of your code in the form of a [ROS package](http://wiki.ros.org/Packages). Your submitted
-repository should make use of the common files/structure used by ROS packages (i.e. package.xml, CMakeLists.txt, /scripts, /src, etc). 
-Please overwrite this README.md file with your own. Your README.md file should contain instructions on how to run your code 
-(i.e. launch files to use, Python scripts and/or ROS nodes to run, etc).
 
 
 
