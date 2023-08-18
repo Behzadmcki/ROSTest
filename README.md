@@ -24,7 +24,7 @@ as it runs it will print the linear x axis  and angular z axis velocity
 to see the resault you should insert a marker from prepared AR tags in gazebo and put it in front of FOV of the robot's camera( you can see the image of the camera live in rqt_view_image)
 as you put the marker in front of the camera the robot will move toward the marker until  ARTag tracking node could not recognise the marker and then the robot will stop
 
-
+https://github.com/Behzadmcki/ROSTest/blob/main/myleo/assets/leo.mp4
 
 
 
